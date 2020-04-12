@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="full_page_container">
-            <div class="page">
+            <div class="page" id="preview">
                 <Preview/>
             </div>
             <div class="page" id="contacts">
@@ -20,7 +20,7 @@
         components: {
             Preview,
             Contacts
-        },
+        }
     }
 </script>
 
@@ -52,7 +52,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: calc(100vh - 60px);
+        height: 100vh;
     }
 
     .typed-cursor {
@@ -80,6 +80,9 @@
         .typed-cursor {
             height: 31px;
             border-left: .19em solid orange; /* The typwriter cursor */
+        }
+        .page {
+            height: calc(100vh - 60px);
         }
     }
 </style>

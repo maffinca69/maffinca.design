@@ -39,13 +39,13 @@
                     typeSpeed: 45,
                     onComplete: () => {
                         let tl = gsap.timeline();
-                        this.lineWidth = this.$refs.typedWrap.clientWidth;
+                        let width = this.$refs.typedWrap.clientWidth;
                         this.visibleLinks = true;
+                        tl.set('.line', {'margin-left': width + 'px'});
 
-                        tl.from(".line", {scaleX: 0, transformOrigin: "right center"});
+                        tl.to(".line",1,{width: width, delay: 0.2, marginLeft:0});
                         tl.from(".lower", {duration: 0.75, y: -50}, "text");
                         tl.to(".arrow", 0.5, {autoAlpha: 1});
-
                     },
                 };
 
@@ -76,8 +76,10 @@
     }
 
     .line {
-        height: 1px;
-        background: white;
+        height: 2px;
+        background-color: white;
+        text-align:center;
+        width:0;
     }
 
     .lowerWrap {
