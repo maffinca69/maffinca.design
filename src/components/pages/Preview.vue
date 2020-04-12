@@ -3,8 +3,8 @@
         <div class="typed_wrap" ref="typedWrap">
             <h1 class="typed"></h1>
         </div>
-        <div class="links" style="visibility: hidden" id="links">
-            <div class="line" id="line"></div>
+        <div class="links" v-bind:style="{ 'visibility': visibleLinks ? 'visible' : 'hidden' }">
+            <div class="line" v-bind:style="{ 'width': lineWidth + 'px' }"></div>
             <div class="lowerWrap">
                 <div class="lower"><a href="tg://resolve?domain=maffinca69">Telegram</a></div>
             </div>
@@ -24,6 +24,10 @@
 
     export default {
         name: "Preview",
+        data: () => ({
+            lineWidth: 0,
+            visibleLinks: false,
+        }),
         mounted() {
             this.typed()
         },
@@ -35,13 +39,13 @@
                     typeSpeed: 45,
                     onComplete: () => {
                         let tl = gsap.timeline();
-                        let width = this.$refs.typedWrap.clientWidth;
-                        document.getElementById('line').setAttribute("style", "width:" + width + "px");
-                        document.getElementById('links').setAttribute("style", "visibility:visible");
+                        this.lineWidth = this.$refs.typedWrap.clientWidth;
+                        this.visibleLinks = true;
 
                         tl.from(".line", {scaleX: 0, transformOrigin: "right center"});
                         tl.from(".lower", {duration: 0.75, y: -50}, "text");
                         tl.to(".arrow", 0.5, {autoAlpha: 1});
+
                     },
                 };
 
