@@ -11,7 +11,8 @@
 
 <script>
     import {gsap} from 'gsap'
-    import ScrollMagic from "scrollmagic";
+    import ScrollMagic from "scrollmagic"
+    import scrollify from "jquery-scrollify";
 
     export default {
         name: "Contacts",
@@ -25,6 +26,14 @@
                     if (this.isLoaded) return;
                     this.lineAnimation();
                 });
+
+               scrollify({
+                    section:".page", // селектор для секций (разделов) на странице
+                    scrollSpeed: 50,
+                    offset : 0, // расстояние в пикселях для комппенсации положения каждого раздела.
+                    scrollbars: false //Будет ли видна полоса прокрутки
+                });
+
         },
         methods: {
             lineAnimation() {
