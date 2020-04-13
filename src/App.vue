@@ -14,7 +14,6 @@
 <script>
     import Preview from "./components/pages/Preview";
     import Contacts from "./components/pages/Contacts";
-
     export default {
         name: 'App',
         components: {
