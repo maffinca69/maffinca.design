@@ -1,5 +1,5 @@
 <template>
-    <div class="contacts">
+    <div class="contacts" id="2">
         <div class="content">
             <div class="logo">
                 <div ref="text">/maffinca</div>
