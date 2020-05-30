@@ -10,7 +10,7 @@
             </div>
         </div>
         <footer>
-            <a class="arrow" href="#contacts" style="opacity: 0">
+            <a class="arrow" href="#2" style="opacity: 0">
                 <img alt="Arrow Down Icon"
                      src="https://raw.githubusercontent.com/solodev/scroll-down-anchor/master/images/arrow-down-1.png">
             </a>
